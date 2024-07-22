@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="" method="post" style="color: white;"> {% csrf_token %}
+    <div style="width: 60%; margin: auto;">
+    {% if messages %}
+        {% for mensajes in messages %}
+            {{mensajes}}
+        {% endfor %}
+    {% endif %}
+
+
+        <style>
+            */{
+    padding: 0;
+    margin: 0;
+}
+
+.cuadro{
+    border: solid 4px;
+    border-radius: 14px;
+    border-color: black ;
+    width: 373px;
+    height: 490px;
+    margin-left: 33rem;
+    position: relative;
+    left: -300px;
+}
+
+.usuario{
+    border: solid;
+    border-width: 1.9px;
+    border-color: rgba(24, 64, 8);
+    border-radius: 10px;
+    width: 258px;
+    height: 36px;
+    margin: auto;
+    margin-left: 52px;
+    font-size: 20px;
+    text-align: center;
+    color: gray;
+    margin: center;
+    margin-top: 130px;
+}
+.usuario:focus{
+    border: solid;
+    border-color: rgb(98, 43, 226);
+    border-width: 2.7px;
+    outline: none;
+    color: rgba(24, 64, 8);
+}
+.usuario:not(:placeholder-shown){
+    border-width: 2.3px;
+}
+.usuario:hover{
+    border: solid transparent;
+    border-width: 3px;
+    transition: box-shadow 0.3 ease;
+    box-shadow: 0px 0px 10px rgba(24, 64, 8);
+}
+.usuario:active{
+    transform: scale(1.01);
+}
+.password{
+    border: solid;
+    border-width: 1.9px;
+    border-color: rgba(24, 64, 8);
+    border-radius: 10px;
+    width: 258px;
+    height: 36px;
+    margin: auto;
+    margin-left: 53px;
+    font-size: 20px;
+    text-align: center;
+    color: gray;
+    margin-top: 10px;
+}
+.password:focus{
+    border: solid;
+    border-color: rgb(144, 43, 226);
+    border-width: 2.7px;
+    outline: none;
+    color: rgba(24, 64, 8);
+}
+.password:not(:placeholder-shown){
+    border-width: 2.3px;
+}
+.password:hover{
+    border: solid transparent;
+    border-width: 3px;
+    transition: box-shadow 0.3 ease;
+    box-shadow: 0px 0px 10px rgba(24, 64, 8);
+}
+.password:active{
+    transform: scale(1.01);
+}
+
+.enter{
+    border: solid;
+    border-width: 1.9px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    background: rgba(24, 64, 8);
+    width: 258px;
+    height: 36px;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-left: 3.4rem;
+}
+.enter:hover{
+    border: 0 transparent;
+    border-width: 2px ;
+    color: black;
+    font-weight: bold;
+    border-color: rgb(44, 15, 71);
+    transform: scale(1.05);
+}
+.enter:active{
+    transform: scale(1.09);
+    transition: box-shadow 0.3 ease;
+    box-shadow: 0px 0px 10px rgba(24, 64, 8);
+    color: white;
+}
+
+.o{
+    color: white;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.anonim{
+    color: white;
+    font-size: 18px;
+    margin: auto;
+    text-align: center;
+    margin-top: 15px ;
+}
+.anonim:hover{
+    transform: scale(1.02);
+    color: black;
+    font-weight: bold;
+}
+.anonim:active{
+    transform: scale(1.05);
+}
+
+.forgot_pass{
+    color: white;
+    font-size: 14px;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+}
+.forgot_pass:hover{
+    transform: scale(1.02);
+    color: black;
+    font-weight: bold;
+}
+.forgot_pass:active{
+    transform: scale(1.05);
+}
+
+.create_acount{
+    font-size:17px ;
+    margin: auto;
+    text-align: center;
+    margin-top: 40px;
+}
+.create_acount a{
+    color: rgba(24, 64, 8);
+    font-weight:bolder
+}
+.create_acount a:hover{
+    transform: scale(1.05);
+    color:rgb(144, 43, 226);
+}
+.create_acount a:active{
+    transform: scale(1.0);
+}
+
+        </style>
+
+    <main class="cuadro">
+<!--         <div><img src="{% static 'pedidos' %}/imagenes/logo.png" alt="" style="height: 125px; width: 150px; position: absolute; left: 650px; top: 15px;"></div>
+ -->        <div class="datos">
+    {{form|crispy}}
+    
+        <button type="submit" class="enter" >Ingresar</button>
+        <h1 class="o">
+            ---------- o ----------
+        </h1>
+        <h1 class="anonim">
+            <a href="!#" class="anonim">Navegar sin iniciar sesion.</a>
+        </h1>
+        <h1 class="forgot_pass">
+            <a href="" class="forgot_pass">¿Olvidaste tu contrase&#209a?</a>
+        </h1>
+        <h1 class="create_acount">Crea tu cuenta
+            <a href="{% url 'Autenticacion' %}" class="create_acount">aqu&iacute;</a>
+        </h1>
+        </div>
+    </main>
+
+    
+</body>
+</html>    
+    
+
+
+
+    </div>
+</form>
+{% endblock %}

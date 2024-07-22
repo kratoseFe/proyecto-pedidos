@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+{% if "valido" in request.GET %}
+<p style="color: white;">Información pasada correctamente.</p>
+{% endif %}
+<div class="contenedor">
+    <form action="" method="post"> {% csrf_token %}
+        <table>{{miFormulario.as_table}}</table>
+        <input type="submit">
+    </form>
+</div>
+
+<!-- <link rel="stylesheet" href="{% static 'C:/Proyecto/proyectoweb/proyectowebapp/static/proyectowebapp/css/estilo_de_contacto.css' %}"> -->
+
+<!-- <body>
+    <br><form class="formulario" action="/contacto/" method="post"> {% csrf_token %}
+        <h1>Contactanos</h1>
+
+        <p>Asunto <input type="text" name="asunto"></p>
+        <p>Nombre <input type="text" name="nombre"></p>
+        <p>Email <input type="text" name="email"></p>
+        <p>Mensaje <textarea name="mensaje" cols="30" rows="10"></textarea></p>
+        <input type="submit" value="Enviar">
+    </form> <br>
+
+</body> -->
+
+{% endblock %}
